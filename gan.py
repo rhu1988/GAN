@@ -128,17 +128,4 @@ class QNet(tf.keras.Model):
         
         return Q_cat, Q_con1, Q_con2
 
-    
-if __name__ == "__main__":
-    import numpy as np
-    
-    #tf.debugging.set_log_device_placement(True)
-    z = np.random.normal(size=(1, 277)).astype(np.float32)
-    z = tf.convert_to_tensor(z)
-    
-    g = Generator()
-    d = Discriminator()
-    image = g(z)
-    prediction = d(image)
-
         
